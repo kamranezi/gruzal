@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Доступные заказы
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Все предложения от Замика</h1>
+
+    {% for gruz in articles %}
+    <div class="alert alert-info">
+        <h2>{{ gruz.title }}</h2>
+        <p>{{ gruz.intro }}</p>
+        <p><b>Дата: {{ gruz.date.date() }}</b></p>
+        <a href="/posts/{{gruz.id }}" class="btn btn-warning">Детали</a>
+        <button class="btn btn-warning">Взять</button>
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
